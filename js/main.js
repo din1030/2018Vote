@@ -5,7 +5,7 @@ var valid = false,
 $(document).ready(function() {
 	$('.vote-section').mouseenter(function(e) {
 		$('.vote-stamp').show();
-		$(this).on('click touchend', function(e) {
+		$(this).on('click', function(e) {
 			var sLeft = e.pageX - 25,
 				sTop = e.pageY - 25;
 			$(vStamp).appendTo($(this)).offset({
