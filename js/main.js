@@ -12,7 +12,7 @@ $(document).ready(function() {
 		pageUrl: window.location.href,
 
 		// page description
-		pageDesc: '透過簡單的操作，讓你不怕 11/24 會投錯！',
+		pageDesc: '透過簡單的操作，讓你 11/24 不投錯！！',
 
 		// or 'right'
 		position: 'left',
