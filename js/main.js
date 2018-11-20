@@ -39,78 +39,78 @@ $(document).ready(function() {
 
 	$('.vote-section').mouseenter(function(e) {
 		$('.vote-stamp').show();
-		$(this).on('click tap', function(e) {
-			var sLeft = e.pageX - 25,
-				sTop = e.pageY - 25;
-			$(vStamp).appendTo($(this)).offset({
-				left: sLeft,
-				top: sTop
+	});
+	$('.vote-section').on('click tap', function(e) {
+		var sLeft = e.pageX - 25,
+			sTop = e.pageY - 25;
+		$(vStamp).appendTo($(this)).offset({
+			left: sLeft,
+			top: sTop
+		});
+
+		var validArea = $(this).find('.valid');
+		var leftColumn = $(this).find('.left-col').eq(0);
+		var leftColRight = $(leftColumn).offset().left + $(leftColumn).outerWidth();
+		if ((sLeft > leftColRight - 7) && (sLeft <= leftColRight)) {
+			// 中間無法辨認地帶
+			$('.validation').text('無效票').addClass('text-danger').removeClass('text-success');
+			var invalid = '<p class="text-danger">您的選票將被視為無效票，請您務必閱讀<a target="_blank" href="assets/vote-validation.pdf">中選會公告之規定</a>。</p>';
+			$('.result-hint').html(invalid);
+			$('.btn-reset').removeAttr('disabled');
+			return;
+		} else {
+			$.each(validArea, function(index, area) {
+				var p = $(area).offset(),
+					pLeft = p.left,
+					pTop = p.top,
+					pRight = p.left + $(area).outerWidth(),
+					pBottom = p.top + $(area).outerHeight();
+
+				if ((sTop < pBottom) && (sLeft < pRight) && (sTop > pTop - 28) && (sLeft > pLeft - 28)) {
+					var newAgree = $(area).hasClass('agree');
+					valid = (agree === null || agree === newAgree);
+					console.log(agree);
+					console.log(newAgree);
+					console.log(valid);
+					// agree = (agree !== null && agree !== newAgree)?'
+					if (valid) {
+						agree = newAgree;
+						correct = $(area).hasClass('correct');
+					} else {
+						agree = -1;
+						correct = false
+					}
+					return false;
+				}
 			});
 
-			var validArea = $(this).find('.valid');
-			var leftColumn = $(this).find('.left-col').eq(0);
-			var leftColRight = $(leftColumn).offset().left + $(leftColumn).outerWidth();
-			if ((sLeft > leftColRight - 7) && (sLeft <= leftColRight)) {
-				// 中間無法辨認地帶
+			if (valid) {
+				if (agree) {
+					$('.validation').text('有效同意票').removeClass('text-danger').addClass('text-success');
+				} else {
+					$('.validation').text('有效不同意票').removeClass('text-danger').addClass('text-success');
+				}
+				if (correct) {
+					var thankyou = '<p class="text-success">謝謝您站在支持婚姻平權/性平同志教育的這一邊，期待台灣能夠擁抱多元的性/別族群，也讓我們的孩子學會尊重每個不同的個體。</p>';
+					$('.result-hint').html(thankyou);
+				} else {
+					var id = $('body').attr('id');
+					var opps = '';
+					if (id == "vote14" || id == "vote15") {
+						opps = '<p class="text-danger">提醒您，本案為同志平權兩案之一（兩好），若您支持婚姻平權/性平教育，請您將本案改投<strong>「同意票」</strong>，期許台灣能夠擁抱多元的性/別族群，也讓我們的孩子學會尊重每個不同的個體。</p>';
+					} else {
+						opps = '<p class="text-danger">提醒您，本案為愛（礙）家三案之一（三壞），若您支持婚姻平權/性平教育，請您將本案改投<strong>「不同意票」</strong>，期許台灣能夠擁抱多元的性/別族群，也讓我們的孩子學會尊重每個不同的個體。</p>';
+					}
+					$('.result-hint').html(opps);
+				}
+				$('.btn-reset').removeAttr('disabled');
+			} else {
 				$('.validation').text('無效票').addClass('text-danger').removeClass('text-success');
 				var invalid = '<p class="text-danger">您的選票將被視為無效票，請您務必閱讀<a target="_blank" href="assets/vote-validation.pdf">中選會公告之規定</a>。</p>';
 				$('.result-hint').html(invalid);
 				$('.btn-reset').removeAttr('disabled');
-				return;
-			} else {
-				$.each(validArea, function(index, area) {
-					var p = $(area).offset(),
-						pLeft = p.left,
-						pTop = p.top,
-						pRight = p.left + $(area).outerWidth(),
-						pBottom = p.top + $(area).outerHeight();
-
-					if ((sTop < pBottom) && (sLeft < pRight) && (sTop > pTop - 28) && (sLeft > pLeft - 28)) {
-						var newAgree = $(area).hasClass('agree');
-						valid = (agree === null || agree === newAgree);
-						console.log(agree);
-						console.log(newAgree);
-						console.log(valid);
-						// agree = (agree !== null && agree !== newAgree)?'
-						if (valid) {
-							agree = newAgree;
-							correct = $(area).hasClass('correct');
-						} else {
-							agree = -1;
-							correct = false
-						}
-						return false;
-					}
-				});
-
-				if (valid) {
-					if (agree) {
-						$('.validation').text('有效同意票').removeClass('text-danger').addClass('text-success');
-					} else {
-						$('.validation').text('有效不同意票').removeClass('text-danger').addClass('text-success');
-					}
-					if (correct) {
-						var thankyou = '<p class="text-success">謝謝您站在支持婚姻平權/性平同志教育的這一邊，期待台灣能夠擁抱多元的性/別族群，也讓我們的孩子學會尊重每個不同的個體。</p>';
-						$('.result-hint').html(thankyou);
-					} else {
-						var id = $('body').attr('id');
-						var opps = '';
-						if (id == "vote14" || id == "vote15") {
-							opps = '<p class="text-danger">提醒您，本案為同志平權兩案之一（兩好），若您支持婚姻平權/性平教育，請您將本案改投<strong>「同意票」</strong>，期許台灣能夠擁抱多元的性/別族群，也讓我們的孩子學會尊重每個不同的個體。</p>';
-						} else {
-							opps = '<p class="text-danger">提醒您，本案為愛（礙）家三案之一（三壞），若您支持婚姻平權/性平教育，請您將本案改投<strong>「不同意票」</strong>，期許台灣能夠擁抱多元的性/別族群，也讓我們的孩子學會尊重每個不同的個體。</p>';
-						}
-						$('.result-hint').html(opps);
-					}
-					$('.btn-reset').removeAttr('disabled');
-				} else {
-					$('.validation').text('無效票').addClass('text-danger').removeClass('text-success');
-					var invalid = '<p class="text-danger">您的選票將被視為無效票，請您務必閱讀<a target="_blank" href="assets/vote-validation.pdf">中選會公告之規定</a>。</p>';
-					$('.result-hint').html(invalid);
-					$('.btn-reset').removeAttr('disabled');
-				}
 			}
-		});
+		}
 	});
 	// 離開投票區隱藏選舉章
 	$('.vote-section').mouseleave(function(e) {
