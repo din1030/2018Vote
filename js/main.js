@@ -6,13 +6,13 @@ $(document).ready(function() {
 	$('#share-bar').share({
 
 		// page title
-		pageTitle: '',
+		pageTitle: '2018 公投模擬：平權兩好三壞',
 
 		// page url
 		pageUrl: window.location.href,
 
 		// page description
-		pageDesc: '',
+		pageDesc: '透過簡單的操作，讓你不怕 11/24 會投錯！',
 
 		// or 'right'
 		position: 'left',
