@@ -1,3 +1,9 @@
+@media (max-width: 992px) {
+  .container {
+    width: 100%;
+    max-width: none;
+  }
+}
 .vertical-rl {
   writing-mode: vertical-rl;
   -webkit-writing-mode: vertical-rl;
@@ -5,6 +11,20 @@
 }
 body {
   padding-top: 70px;
+}
+@media (max-width: 680px) {
+  body {
+    padding-bottom: 80px;
+  }
+}
+.pager {
+  top: 70px;
+  margin: 10px;
+  z-index: 100;
+  opacity: 0.8;
+}
+.pager.next {
+  right: 0;
 }
 .vote-section {
   width: 100%;
@@ -38,4 +58,30 @@ td:first-of-type {
 .v-num {
   font-size: 2.5rem;
   color: #e00c88;
+}
+.vote-focus {
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+.btn-reset:disabled {
+  cursor: not-allowed;
+}
+ol.ref-list {
+  counter-reset: myCouter;
+  padding-left: 0;
+}
+ol.ref-list li {
+  list-style: outside none none;
+}
+ol.ref-list li::before {
+  content: counter(myCouter, decimal);
+  counter-increment: myCouter;
+  background: #2980b9 none repeat scroll 0 0;
+  color: #fff;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  margin: 5px 10px;
+  text-align: center;
+  width: 40px;
 }
