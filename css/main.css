@@ -63,6 +63,9 @@ td:first-of-type {
   font-size: 1.1rem;
   letter-spacing: 2px;
 }
+.vote-hint {
+  line-height: 1.7rem;
+}
 .btn-reset:disabled {
   cursor: not-allowed;
 }
