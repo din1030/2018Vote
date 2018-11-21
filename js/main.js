@@ -1,4 +1,4 @@
-var cStamp = '<img class="vote-stamp position-absolute" src="../img/vote-cursor.png">';
+var cStamp = '<img class="vote-stamp position-relative" src="../img/vote-cursor.png">';
 var vStamp = '<img class="stamp position-absolute" src="../img/vote-cursor.png">';
 
 var valid = false,
