@@ -1,4 +1,6 @@
-var vStamp = '<img class="stamp position-relative" src="../img/vote-cursor.png">';
+var cStamp = '<img class="vote-stamp position-absolute" src="../img/vote-cursor.png">';
+var vStamp = '<img class="stamp position-absolute" src="../img/vote-cursor.png">';
+
 var valid = false,
 	agree = null,
 	correct = false;
@@ -27,9 +29,10 @@ $(document).ready(function() {
 		itemTriggerClass: 'js-share'
 	});
 
-	// $('.vote-section').mouseenter(function(e) {
-	// 	$('.vote-stamp').show();
-	// });
+	$('.vote-section').mouseenter(function(e) {
+		// $('.vote-stamp').show();
+		$(this).append(cStamp);
+	});
 	$('.vote-section').on('click singleTap', function(e) {
 		var sLeft = e.pageX - 25,
 			sTop = e.pageY - 25;
@@ -99,12 +102,12 @@ $(document).ready(function() {
 	});
 	// 離開投票區隱藏選舉章
 	$('.vote-section').mouseleave(function(e) {
-		$('.vote-stamp').hide();
+		$('.vote-stamp').remove();
 		// $(this).off('click');
 	});
 	// 選舉章隨滑鼠移動
 	$('.vote-section').mousemove(function(e) {
-		$('.vote-stamp').show();
+		// $('.vote-stamp').show();
 		$('.vote-stamp').offset({
 			left: e.pageX - 25,
 			top: e.pageY - 25

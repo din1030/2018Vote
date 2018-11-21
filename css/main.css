@@ -40,9 +40,6 @@ body {
   max-width: 400px;
   margin: 0 auto;
 }
-.vote-stamp {
-  display: none;
-}
 .table td,
 .table th {
   vertical-align: middle;
