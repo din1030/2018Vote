@@ -71,9 +71,9 @@ $(document).ready(function() {
 
 			if (valid) {
 				if (agree) {
-					$('.validation').text('有效同意票').removeClass('text-danger').addClass('text-success');
+					$('.validation').text('有效同意票').removeClass('text-danger').addClass('text-primary');
 				} else {
-					$('.validation').text('有效不同意票').removeClass('text-danger').addClass('text-success');
+					$('.validation').text('有效不同意票').removeClass('text-danger').addClass('text-primary');
 				}
 				if (correct) {
 					var thankyou = '<p class="text-success">謝謝您站在支持婚姻平權/性平同志教育的這一邊，期待台灣能夠擁抱多元的性/別族群，也讓我們的孩子學會尊重每個不同的個體。</p>';

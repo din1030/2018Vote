@@ -77,6 +77,11 @@ td:first-of-type {
 .btn-reset:disabled {
   cursor: not-allowed;
 }
+.result-hint p {
+  font-size: 1.1rem;
+  line-height: 1.7rem;
+  letter-spacing: 1px;
+}
 ol.ref-list {
   counter-reset: myCouter;
   padding-left: 0;
