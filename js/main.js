@@ -116,7 +116,7 @@ $(document).ready(function() {
 		correct = false;
 		$('img.stamp').remove();
 		$('.btn-reset').attr('disabled', '');
-		$('.validation').text('（尚未投票）').removeClass('text-danger').removeClass('text-success');
+		$('.validation').text('（尚未投票）').removeClass('text-primary').removeClass('text-danger');
 		$('.result-hint').empty();
 	});
 });
