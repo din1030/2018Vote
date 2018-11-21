@@ -62,8 +62,6 @@
 				</ul>
 			</div>
 		</nav>
-		<!-- <a href="index.html" class="pager previous btn btn-secondary position-absolute">&laquo; <span class="d-none d-sm-inline">上一案</span></a>
-		<a href="vote12.html" class="pager next btn btn-secondary position-absolute"><span class="d-none d-sm-inline">下一案</span> &raquo;</a> -->
 		<div class="container">
 			<div class="row">
 				<div class="col-md col-lg-5">
@@ -92,29 +90,52 @@
 							</tr>
 						</table>
 					</section>
+					<div class="h6 vote-hint float-right text-center w-100">
+						請於公投票區域圈選。
+						<button class="btn btn-outline-secondary btn-sm" type="button" data-toggle="modal" data-target="#noteModal" aria-expanded="false" aria-controls="noteModal">
+							注意事項
+						</button>
+						</p>
+						<div id="noteModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+							<div class="modal-dialog modal-dialog-centered" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" >公投注意事項</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<p>＊本頁面認定之公投票效力依據<a target="_blank" href="assets/vote-validation.pdf">中選會公告之規定</a>，<strong>若圈選兩處以上仍可判別選項視為有效</strong>。</p>
+										<p>＊投票時使用「非」投票所制式投票圖章、蓋指印、用筆做記號或簽名等，亦屬於<strong>無效票</strong>。</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 				<div class="col-md col-lg-6" style="padding-top: 20px;">
 					<h5 class="text-md-center">
-						<a href="index.html" class="pager previous btn btn-secondary btn-sm">&laquo; <span class="d-none d-sm-inline d-md-none d-lg-inline">上一案</span></a>
+						<a href="index.html" class="pager btn btn-outline-primary btn-sm">&laquo; <span class="d-none d-sm-inline d-md-none d-lg-inline">上一案</span></a>
 						全國性公民投票【第11案】
-						<a href="vote12.html" class="pager previous btn btn-secondary btn-sm"><span class="d-none d-sm-inline d-md-none d-lg-inline">下一案</span> &raquo;</a>
+						<a href="vote12.html" class="pager btn btn-outline-primary btn-sm"><span class="d-none d-sm-inline d-md-none d-lg-inline">下一案</span> &raquo;</a>
 					</h5>
 					<h4>你是否同意在國民教育階段內（國中及國小），教育部及各級學校不應對學生實施性別平等教育法施行細則所定之同志教育？</h4>
 					提案人：曾獻瑩（下一代幸福聯盟、風向傳媒）
-					<div class="my-3">
-						<a target="_blank" href="https://hackmd.io/c/Hk7SAIH6Q/%2Fs%2FHJ7jjwBTX">第11案理由書暨行政院意見書</a>
+					<div class="mb-3">
+						<a target="_blank" href="https://hackmd.io/c/Hk7SAIH6Q/%2Fs%2FHJ7jjwBTX">理由書暨行政院意見書<i class="fas fa-link ml-1"></i></a>
 					</div>
-					<p class="vote-focus"><ins>本案重點：反對同志教育。</ins></p>
-					<hr class="my-4">
-					<div class="h5 vote-hint">
-						請於公投票區域圈選同意或不同意。<br>
-						<small>＊本頁面認定之公投票效力依據<a target="_blank" href="assets/vote-validation.pdf">中選會公告之規定</a>，<strong>若圈選兩處以上仍可判別選項視為有效</strong>。</small><br>
-						<small>＊溫馨提醒：投票時使用「非」投票所制式投票圖章、蓋指印、用筆做記號或簽名等，皆會造成該公投票成為<strong>無效票</strong>。</small>
+					<div class="vote-focus text-danger mb-1" role="alert">
+						<u>本案重點：<strong>反對</strong>同志教育。</u>
 					</div>
-					<div class="result card p-3 my-3 h6">
-						公投票效力認定：
-						<p class="validation text-underline mt-3 h4">（尚未投票）</p>
-						<button type="button" name="button" class="btn btn-info btn-reset btn-sm" disabled>公投票重置</button>
+					<div>
+						<span class="bg-secondary text-light mr-1 p-1 rounded">註</span>
+						<span class="text-muted">此案剝奪孩子認識自己或學習尊重他人多元差異的機會，並誤導大眾同志教育會把孩子教成同志。</span>
+					</div>
+					<div class="result border rounded p-3 my-3 h6">
+						<span>公投票效力認定：</span>
+						<span class="validation mt-3 h5">（尚未投票）</span>
+						<button type="button" name="button" class="btn btn-light btn-reset btn-sm" disabled>公投票重置</button>
 					</div>
 					<div class="result-hint"></div>
 				</div>

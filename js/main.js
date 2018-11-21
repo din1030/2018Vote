@@ -3,43 +3,33 @@ var valid = false,
 	agree = null,
 	correct = false;
 $(document).ready(function() {
-	$('#share-bar').share({
 
+	$('#share-bar').share({
 		// page title
 		pageTitle: '2018 公投模擬：平權兩好三壞',
-
 		// page url
 		pageUrl: window.location.href,
-
 		// page description
 		pageDesc: '模擬實際公投票格式，透過簡單操作，讓你 11/24 不投錯！！',
-
 		// or 'right'
 		position: 'left',
-
 		// or 'square'
 		theme: 'circle',
-
 		// enable/disable animation
 		animate: true,
-
 		// popup width
 		popupWidth: 640,
-
 		// popup height
 		popupHeight: 528,
-
 		// an array of social networking services
 		channels: ['facebook', 'twitter', 'linkedin'],
-
 		// trigger class
 		itemTriggerClass: 'js-share'
-
 	});
 
-	$('.vote-section').mouseenter(function(e) {
-		$('.vote-stamp').show();
-	});
+	// $('.vote-section').mouseenter(function(e) {
+	// 	$('.vote-stamp').show();
+	// });
 	$('.vote-section').on('click tap', function(e) {
 		var sLeft = e.pageX - 25,
 			sTop = e.pageY - 25;
@@ -47,7 +37,6 @@ $(document).ready(function() {
 			left: sLeft,
 			top: sTop
 		});
-
 		var validArea = $(this).find('.valid');
 		var leftColumn = $(this).find('.left-col').eq(0);
 		var leftColRight = $(leftColumn).offset().left + $(leftColumn).outerWidth();
@@ -91,11 +80,11 @@ $(document).ready(function() {
 					$('.result-hint').html(thankyou);
 				} else {
 					var id = $('body').attr('id');
-					var opps = '';
+					var opps = '<h4 class="text-danger">Opps!你是萌萌嗎？</h4>';
 					if (id == "vote14" || id == "vote15") {
-						opps = '<p class="text-danger">提醒您，本案為同志平權兩案之一（兩好），若您支持婚姻平權/性平教育，請您將本案改投<strong>「同意票」</strong>，期許台灣能夠擁抱多元的性/別族群，也讓我們的孩子學會尊重每個不同的個體。</p>';
+						opps += '<p class="text-danger">提醒您，本案為同志平權兩案之一（兩好），若您支持婚姻平權/性平教育，請您將本案改投<strong>「同意票」</strong>，期許台灣能夠擁抱多元的性/別族群，也讓我們的孩子學會尊重每個不同的個體。</p>';
 					} else {
-						opps = '<p class="text-danger">提醒您，本案為愛（礙）家三案之一（三壞），若您支持婚姻平權/性平教育，請您將本案改投<strong>「不同意票」</strong>，期許台灣能夠擁抱多元的性/別族群，也讓我們的孩子學會尊重每個不同的個體。</p>';
+						opps += '<p class="text-danger">提醒您，本案為愛（礙）家三案之一（三壞），若您支持婚姻平權/性平教育，請您將本案改投<strong>「不同意票」</strong>，期許台灣能夠擁抱多元的性/別族群，也讓我們的孩子學會尊重每個不同的個體。</p>';
 					}
 					$('.result-hint').html(opps);
 				}
@@ -111,10 +100,11 @@ $(document).ready(function() {
 	// 離開投票區隱藏選舉章
 	$('.vote-section').mouseleave(function(e) {
 		$('.vote-stamp').hide();
-		$(this).off('click');
+		// $(this).off('click');
 	});
 	// 選舉章隨滑鼠移動
 	$('.vote-section').mousemove(function(e) {
+		$('.vote-stamp').show();
 		$('.vote-stamp').offset({
 			left: e.pageX - 25,
 			top: e.pageY - 25
