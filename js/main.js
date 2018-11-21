@@ -69,10 +69,6 @@ $(document).ready(function() {
 				if ((sTop < pBottom) && (sLeft < pRight) && (sTop > pTop - 28) && (sLeft > pLeft - 28)) {
 					var newAgree = $(area).hasClass('agree');
 					valid = (agree === null || agree === newAgree);
-					console.log(agree);
-					console.log(newAgree);
-					console.log(valid);
-					// agree = (agree !== null && agree !== newAgree)?'
 					if (valid) {
 						agree = newAgree;
 						correct = $(area).hasClass('correct');
