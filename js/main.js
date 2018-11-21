@@ -33,7 +33,7 @@ $(document).ready(function() {
 		// $('.vote-stamp').show();
 		$(this).append(cStamp);
 	});
-	$('.vote-section').on('click singleTap', function(e) {
+	$('.vote-section').on('click', function(e) {
 		var sLeft = e.pageX - 25,
 			sTop = e.pageY - 25;
 		$(vStamp).appendTo($(this)).offset({
