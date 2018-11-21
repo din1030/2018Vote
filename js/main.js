@@ -12,7 +12,7 @@ $(document).ready(function() {
 		pageUrl: window.location.href,
 
 		// page description
-		pageDesc: '透過簡單的操作，讓你 11/24 不投錯！！',
+		pageDesc: '模擬實際公投票格式，透過簡單操作，讓你 11/24 不投錯！！',
 
 		// or 'right'
 		position: 'left',
