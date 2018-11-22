@@ -36,18 +36,14 @@ $(document).ready(function() {
 		itemTriggerClass: 'js-share'
 	});
 
-	if (!isMobile()) {
-		// $(this).append(cStamp);
-		// $('.vote-stamp').hide();
-
+	var isMo = isMobile();
+	if (!isMo) {
 		$('.vote-section').mouseenter(function(e) {
 			$('.vote-stamp').show();
 		});
 		// 離開投票區隱藏選舉章
 		$('.vote-section').mouseleave(function(e) {
 			$('.vote-stamp').hide();
-			// $('.vote-stamp').remove();
-			// $(this).off('click');
 		});
 		// 選舉章隨滑鼠移動
 		$('.vote-section').mousemove(function(e) {
@@ -72,8 +68,8 @@ $(document).ready(function() {
 		if ((sLeft > leftColRight - 7) && (sLeft <= leftColRight)) {
 			// 中間無法辨認地帶
 			$('.validation').text('無效票').addClass('text-danger').removeClass('text-success');
-			var invalid = '<p class="text-danger">您的選票將被視為無效票，請您務必閱讀<a target="_blank" href="assets/vote-validation.pdf">中選會公告之規定</a>。</p>';
-			$('.result-hint').html(invalid);
+			var invalid = '<div class="text-danger text-left">您的選票將被視為無效票，請您務必閱讀<a target="_blank" href="assets/vote-validation.pdf">中選會公告之規定</a>。</div>';
+			$('.result-hint').html(invalid).removeClass('alert alert-success').addClass('alert alert-danger');
 			$('.btn-reset').removeAttr('disabled');
 			return;
 		} else {
@@ -105,23 +101,23 @@ $(document).ready(function() {
 					$('.validation').text('有效不同意票').removeClass('text-danger').addClass('text-primary');
 				}
 				if (correct) {
-					var thankyou = '<p class="text-success">謝謝您站在支持婚姻平權/性平同志教育的這一邊，期待台灣能夠擁抱多元的性/別族群，也讓我們的孩子學會尊重每個不同的個體。</p>';
-					$('.result-hint').html(thankyou);
+					var thankyou = '<div class="text-success text-left">謝謝您站在支持婚姻平權/性平同志教育的這一邊，期待台灣能夠擁抱多元的性/別族群，也讓我們的孩子學會尊重每個不同的個體。</div>';
+					$('.result-hint').html(thankyou).removeClass('alert alert-danger').addClass('alert alert-success');
 				} else {
 					var id = $('body').attr('id');
 					var opps = '<h4 class="text-danger">Opps!你是萌萌嗎？</h4>';
 					if (id == "vote14" || id == "vote15") {
-						opps += '<p class="text-danger">提醒您，本案為同志平權兩案之一（兩好），若您支持婚姻平權/性平教育，請您將本案改投<strong>「同意票」</strong>，期許台灣能夠擁抱多元的性/別族群，也讓我們的孩子學會尊重每個不同的個體。</p>';
+						opps += '<div class="text-danger text-left">提醒您，本案為同志平權兩案之一（兩好），若您支持婚姻平權/性平教育，請您將本案改投<strong>「同意票」</strong>，期許台灣能夠擁抱多元的性/別族群，也讓我們的孩子學會尊重每個不同的個體。</div>';
 					} else {
-						opps += '<p class="text-danger">提醒您，本案為愛（礙）家三案之一（三壞），若您支持婚姻平權/性平教育，請您將本案改投<strong>「不同意票」</strong>，期許台灣能夠擁抱多元的性/別族群，也讓我們的孩子學會尊重每個不同的個體。</p>';
+						opps += '<div class="text-danger text-left">提醒您，本案為愛（礙）家三案之一（三壞），若您支持婚姻平權/性平教育，請您將本案改投<strong>「不同意票」</strong>，期許台灣能夠擁抱多元的性/別族群，也讓我們的孩子學會尊重每個不同的個體。</div>';
 					}
-					$('.result-hint').html(opps);
+					$('.result-hint').html(opps).removeClass('alert alert-success').addClass('alert alert-danger');
 				}
 				$('.btn-reset').removeAttr('disabled');
 			} else {
 				$('.validation').text('無效票').addClass('text-danger').removeClass('text-success');
-				var invalid = '<p class="text-danger">您的選票將被視為無效票，請您務必閱讀<a target="_blank" href="assets/vote-validation.pdf">中選會公告之規定</a>。</p>';
-				$('.result-hint').html(invalid);
+				var invalid = '<div class="text-danger text-left">您的選票將被視為無效票，請您務必閱讀<a target="_blank" href="assets/vote-validation.pdf">中選會公告之規定</a>。</div>';
+				$('.result-hint').html(invalid).removeClass('alert alert-success').addClass('alert alert-danger');
 				$('.btn-reset').removeAttr('disabled');
 			}
 		}
