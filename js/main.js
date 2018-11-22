@@ -1,9 +1,16 @@
-var cStamp = '<img class="vote-stamp position-relative" src="../img/vote-cursor.png">';
+// var cStamp = '<img class="vote-stamp position-relative" src="../img/vote-cursor.png">';
 var vStamp = '<img class="stamp position-absolute" src="../img/vote-cursor.png">';
 
 var valid = false,
 	agree = null,
 	correct = false;
+
+var logText1 = '附帶一提，我個人支持東奧正名，公投是民主的展現，若正名案通過中華奧會順應民意申請更名，';
+var logText2 = '國際奧會所提出的憲章來說並不適用。目前的狀況在於豬隊友中華奧會本身的立場是不想正名，';
+var logText3 = '所以認為公投是「政治力脅迫」。參見進擊的台灣隊-Team Taiwan 貼文';
+var logText4 = 'https://www.facebook.com/TeamTaiwan.2020TokyoOlympics/photos/a.504547829741849/897627827100512/';
+var logText5 = '不過怕在這裡模糊焦點， 原本網站有加入東奧正名的投票模擬被我抽掉了。 但還是鼓勵大家在公投第 13 案也蓋上同意。';
+
 $(document).ready(function() {
 
 	$('#share-bar').share({
@@ -29,11 +36,30 @@ $(document).ready(function() {
 		itemTriggerClass: 'js-share'
 	});
 
-	$('.vote-section').mouseenter(function(e) {
-		// $('.vote-stamp').show();
-		$(this).append(cStamp);
-	});
-	$('.vote-section').on('click', function(e) {
+	if (!isMobile()) {
+		// $(this).append(cStamp);
+		// $('.vote-stamp').hide();
+
+		$('.vote-section').mouseenter(function(e) {
+			$('.vote-stamp').show();
+		});
+		// 離開投票區隱藏選舉章
+		$('.vote-section').mouseleave(function(e) {
+			$('.vote-stamp').hide();
+			// $('.vote-stamp').remove();
+			// $(this).off('click');
+		});
+		// 選舉章隨滑鼠移動
+		$('.vote-section').mousemove(function(e) {
+			$('.vote-stamp').show();
+			$('.vote-stamp').offset({
+				left: e.pageX - 25,
+				top: e.pageY - 25
+			});
+		});
+	}
+
+	$('.vote-section').on('vclick', function(e) {
 		var sLeft = e.pageX - 25,
 			sTop = e.pageY - 25;
 		$(vStamp).appendTo($(this)).offset({
@@ -100,19 +126,7 @@ $(document).ready(function() {
 			}
 		}
 	});
-	// 離開投票區隱藏選舉章
-	$('.vote-section').mouseleave(function(e) {
-		$('.vote-stamp').remove();
-		// $(this).off('click');
-	});
-	// 選舉章隨滑鼠移動
-	$('.vote-section').mousemove(function(e) {
-		// $('.vote-stamp').show();
-		$('.vote-stamp').offset({
-			left: e.pageX - 25,
-			top: e.pageY - 25
-		});
-	});
+
 	$('.btn-reset').click(function(e) {
 		valid = false;
 		agree = null;
@@ -122,4 +136,20 @@ $(document).ready(function() {
 		$('.validation').text('（尚未投票）').removeClass('text-primary').removeClass('text-danger');
 		$('.result-hint').empty();
 	});
+
+	console.warn(logText1);
+	console.warn(logText2);
+	console.warn(logText3);
+	console.warn(logText4);
+	console.warn(logText5);
+
 });
+
+function isMobile() {
+	try {
+		document.createEvent("TouchEvent");
+		return true;
+	} catch (e) {
+		return false;
+	}
+}
