@@ -129,8 +129,8 @@ $(document).ready(function() {
 		correct = false;
 		$('img.stamp').remove();
 		$('.btn-reset').attr('disabled', '');
-		$('.validation').text('（尚未投票）').removeClass('text-primary').removeClass('text-danger');
-		$('.result-hint').empty();
+		$('.validation').text('（尚未投票）').removeClass('text-primary text-danger');
+		$('.result-hint').empty().removeClass('text-success text-danger alert alert-danger alert-success');
 	});
 
 	console.warn(logText1);
