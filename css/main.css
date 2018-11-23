@@ -40,6 +40,16 @@ body {
   max-width: 400px;
   margin: 0 auto;
 }
+@media (max-width: 440px) {
+  .vote-section {
+    padding: 0 20px;
+  }
+}
+@media (max-width: 320px) {
+  .vote-section {
+    padding: 0;
+  }
+}
 .vote-stamp {
   display: none;
 }
@@ -55,6 +65,11 @@ td:first-of-type {
   font-size: 1rem;
   padding: 15px 7px;
   width: 1.3rem;
+}
+@media (max-width: 320px) {
+  td:first-of-type {
+    font-size: 0.8rem;
+  }
 }
 .disagree span {
   letter-spacing: 2px;

@@ -13,28 +13,28 @@ var logText5 = '不過怕在這裡模糊焦點， 原本網站有加入東奧正
 
 $(document).ready(function() {
 
-	$('#share-bar').share({
-		// page title
-		pageTitle: '2018 公投模擬：平權兩好三壞',
-		// page url
-		pageUrl: window.location.href,
-		// page description
-		pageDesc: '模擬實際公投票格式，透過簡單操作，讓你 11/24 不投錯！！',
-		// or 'right'
-		position: 'left',
-		// or 'square'
-		theme: 'circle',
-		// enable/disable animation
-		animate: true,
-		// popup width
-		popupWidth: 640,
-		// popup height
-		popupHeight: 528,
-		// an array of social networking services
-		channels: ['facebook', 'twitter', 'linkedin'],
-		// trigger class
-		itemTriggerClass: 'js-share'
-	});
+	// $('#share-bar').share({
+	// 	// page title
+	// 	pageTitle: '2018 公投模擬：平權兩好三壞',
+	// 	// page url
+	// 	pageUrl: window.location.href,
+	// 	// page description
+	// 	pageDesc: '模擬實際公投票格式，透過簡單操作，讓你 11/24 不投錯！！',
+	// 	// or 'right'
+	// 	position: 'left',
+	// 	// or 'square'
+	// 	theme: 'circle',
+	// 	// enable/disable animation
+	// 	animate: true,
+	// 	// popup width
+	// 	popupWidth: 640,
+	// 	// popup height
+	// 	popupHeight: 528,
+	// 	// an array of social networking services
+	// 	channels: ['facebook', 'twitter', 'linkedin'],
+	// 	// trigger class
+	// 	itemTriggerClass: 'js-share'
+	// });
 
 	var isMo = isMobile();
 	if (!isMo) {
