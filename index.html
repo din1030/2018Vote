@@ -3,12 +3,18 @@
 
 	<head>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129590723-1"></script>
+		<script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-129590723-1"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
+			function gtag() {
+				dataLayer.push(arguments);
+			}
 			gtag('js', new Date());
 			gtag('config', 'UA-129590723-1');
+		</script>
+		<script async="async" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<script>
+			(adsbygoogle = window.adsbygoogle || []).push({google_ad_client: "ca-pub-5312666465190999", enable_page_level_ads: true});
 		</script>
 
 		<meta charset="utf-8">
@@ -18,11 +24,11 @@
 		<meta itemprop="name" content="2018 公投模擬：平權兩好三壞">
 		<meta itemprop="description" content="模擬實際公投票格式，透過簡單操作，讓你 11/24 不投錯！">
 
-		<meta property="og:url" content="https://2018vote.gogodin-studio.com/" />
-		<meta property="og:type" content="website" />
-		<meta property="og:title" content="2018 公投模擬：平權兩好三壞" />
-		<meta property="og:image" content="https://2018vote.gogodin-studio.com/img/preview.jpg" />
-		<meta property="og:description" content="模擬實際公投票格式，透過簡單操作，讓你 11/24 不投錯！" />
+		<meta property="og:url" content="https://2018vote.gogodin-studio.com/"/>
+		<meta property="og:type" content="website"/>
+		<meta property="og:title" content="2018 公投模擬：平權兩好三壞"/>
+		<meta property="og:image" content="https://2018vote.gogodin-studio.com/img/preview.jpg"/>
+		<meta property="og:description" content="模擬實際公投票格式，透過簡單操作，讓你 11/24 不投錯！"/>
 
 		<title>2018 公投模擬：平權兩好三壞</title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -33,7 +39,8 @@
 	<body id="vote10">
 		<!-- <div id="share-bar"></div> -->
 		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-			<a class="navbar-brand" href="/"><span class="d-none d-sm-inline">2018</span><span class="d-nonex d-xs-inlinex">公投模擬：</span>平權兩好三壞</a>
+			<a class="navbar-brand" href="/">
+				<span class="d-none d-sm-inline">2018</span><span class="d-nonex d-xs-inlinex">公投模擬：</span>平權兩好三壞</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -77,8 +84,10 @@
 							</tr>
 							<tr>
 								<td>同意或不同意欄</td>
-								<td width="150" class="vertical-rl valid agree"><span class="vertical-rl v-option">同　意</span></td>
-								<td width="150" class="vertical-rl valid disagree correct"><span class="vertical-rl v-option disagree">不同意</span></td>
+								<td width="150" class="vertical-rl valid agree">
+									<span class="vertical-rl v-option">同 意</span></td>
+								<td width="150" class="vertical-rl valid disagree correct">
+									<span class="vertical-rl v-option disagree">不同意</span></td>
 							</tr>
 							<tr>
 								<td>編號欄</td>
@@ -96,62 +105,66 @@
 						<button class="btn btn-outline-secondary btn-sm" type="button" data-toggle="modal" data-target="#noteModal" aria-expanded="false" aria-controls="noteModal">
 							注意事項
 						</button>
-						</p>
-						<div id="noteModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-							<div class="modal-dialog modal-dialog-centered" role="document">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h5 class="modal-title" >公投注意事項</h5>
-										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-											<span aria-hidden="true">&times;</span>
-										</button>
-									</div>
-									<div class="modal-body">
-										<p>＊本頁面認定之公投票效力依據<a target="_blank" href="assets/vote-validation.pdf">中選會公告之規定</a>，<strong>若圈選兩處以上仍可判別選項視為有效</strong>。</p>
-										<p>＊投票時使用「非」投票所制式投票圖章、蓋指印、用筆做記號或簽名等，亦屬於<strong>無效票</strong>。</p>
-									</div>
+					</p>
+					<div id="noteModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title">公投注意事項</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<p>＊本頁面認定之公投票效力依據<a target="_blank" href="assets/vote-validation.pdf">中選會公告之規定</a>，<strong>若圈選兩處以上仍可判別選項視為有效</strong>。</p>
+									<p>＊投票時使用「非」投票所制式投票圖章、蓋指印、用筆做記號或簽名等，亦屬於<strong>無效票</strong>。</p>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-md col-lg-6" style="padding-top: 20px;">
-					<a href="vote15.html" class="pager previous btn btn-outline-primary btn-sm d-md-none">&laquo; 上一案</a>
-					<a href="vote11.html" class="pager previous btn btn-outline-primary btn-sm d-md-none">下一案 &raquo;</a>
-					<h5 class="text-md-center">
-						<a href="vote15.html" class="pager previous btn btn-outline-primary btn-sm d-none d-md-inline">&laquo; <span class="d-none d-sm-inline d-md-none d-lg-inline">上一案</span></a>
-						全國性公民投票【第10案】
-						<a href="vote11.html" class="pager previous btn btn-outline-primary btn-sm d-none d-md-inline"><span class="d-none d-sm-inline d-md-none d-lg-inline">下一案</span> &raquo;</a>
-					</h5>
-					<h4>你是否同意民法婚姻規定應限定在一男一女的結合？</h4>
-					提案人：游信義（下一代幸福聯盟、安定力量）
-					<div class="mb-3">
-						<a target="_blank" href="https://hackmd.io/c/Hk7SAIH6Q/%2Fs%2FSJcyvDBaX">理由書暨行政院意見書<i class="fas fa-link ml-1"></i></a>
-					</div>
-					<div class="vote-focus text-danger mb-1">
-						【本案重點：<strong>排除</strong>同性婚姻適用民法婚姻章。】
-					</div>
-					<div>
-						<span class="bg-secondary text-light mr-1 p-1 rounded">註</span>
-						<span class="text-muted">將同婚排除在民法外就是歧視！</span>
-					</div>
-					<div class="result border rounded p-3 my-3 h6">
-						<span>公投票效力認定：</span>
-						<span class="validation mt-3 h6">（尚未投票）</span>
-						<button type="button" name="button" class="btn btn-light btn-reset btn-sm" disabled>公投票重置</button>
-					</div>
-					<div class="result-hint d-none d-md-block"></div>
+			</div>
+			<div class="col-md col-lg-6" style="padding-top: 20px;">
+				<a href="vote15.html" class="pager previous btn btn-outline-primary btn-sm d-md-none">&laquo; 上一案</a>
+				<a href="vote11.html" class="pager previous btn btn-outline-primary btn-sm d-md-none">下一案 &raquo;</a>
+				<h5 class="text-md-center">
+					<a href="vote15.html" class="pager previous btn btn-outline-primary btn-sm d-none d-md-inline">&laquo;
+						<span class="d-none d-sm-inline d-md-none d-lg-inline">上一案</span></a>
+					全國性公民投票【第10案】
+					<a href="vote11.html" class="pager previous btn btn-outline-primary btn-sm d-none d-md-inline">
+						<span class="d-none d-sm-inline d-md-none d-lg-inline">下一案</span>
+						&raquo;</a>
+				</h5>
+				<h4>你是否同意民法婚姻規定應限定在一男一女的結合？</h4>
+				提案人：游信義（下一代幸福聯盟、安定力量）
+				<div class="mb-3">
+					<a target="_blank" href="https://hackmd.io/c/Hk7SAIH6Q/%2Fs%2FSJcyvDBaX">理由書暨行政院意見書<i class="fas fa-link ml-1"></i>
+					</a>
 				</div>
+				<div class="vote-focus text-danger mb-1">
+					【本案重點：<strong>排除</strong>同性婚姻適用民法婚姻章。】
+				</div>
+				<div>
+					<span class="bg-secondary text-light mr-1 p-1 rounded">註</span>
+					<span class="text-muted">將同婚排除在民法外就是歧視！</span>
+				</div>
+				<div class="result border rounded p-3 my-3 h6">
+					<span>公投票效力認定：</span>
+					<span class="validation mt-3 h6">（尚未投票）</span>
+					<button type="button" name="button" class="btn btn-light btn-reset btn-sm" disabled="disabled">公投票重置</button>
+				</div>
+				<div class="result-hint d-none d-md-block"></div>
 			</div>
 		</div>
-		<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-		<script src="plugins/jquery.mobile.custom.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-		<script src="plugins/social-share/jquery-social-share-bar.js"></script>
-		<script src="js/main.js"></script>
-	</body>
+	</div>
+	<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="plugins/jquery.mobile.custom.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script src="plugins/social-share/jquery-social-share-bar.js"></script>
+	<script src="js/main.js"></script>
+</body>
 
 </html>
